@@ -1,0 +1,491 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{294EED2D-B321-443E-900F-8C4B0EAF3334}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Pilgrimage_Of_Embers</RootNamespace>
+    <AssemblyName>Pilgrimage Of Embers</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MonoGamePlatform>Windows</MonoGamePlatform>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\$(MonoGamePlatform)\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\$(MonoGamePlatform)\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="AudioEngine\MusicDatabase.cs" />
+    <Compile Include="AudioEngine\MusicLayer.cs" />
+    <Compile Include="AudioEngine\MusicManager.cs" />
+    <Compile Include="AudioEngine\SoundEffect2D.cs" />
+    <Compile Include="AudioEngine\WindAudio.cs" />
+    <Compile Include="Camera.cs" />
+    <Compile Include="CombatEngine\AOE\AOEDatabase.cs" />
+    <Compile Include="CombatEngine\AOE\BaseAOE.cs" />
+    <Compile Include="CombatEngine\AOE\Types\TestAOE.cs" />
+    <Compile Include="CombatEngine\BaseCombat.cs" />
+    <Compile Include="CombatEngine\Projectiles\BaseProjectile.cs" />
+    <Compile Include="CombatEngine\Projectiles\ProjectileDatabase.cs" />
+    <Compile Include="CombatEngine\Projectiles\Types\Physical\Arrows\FireArrow.cs" />
+    <Compile Include="CombatEngine\Projectiles\Types\Physical\BouncingBall.cs" />
+    <Compile Include="CombatEngine\Projectiles\Types\Physical\PhysicalProjectile.cs" />
+    <Compile Include="CombatEngine\Projectiles\Types\Physical\StatusProjectile.cs" />
+    <Compile Include="CombatEngine\Types\BaseCaster.cs" />
+    <Compile Include="CombatEngine\Types\BaseDeflector.cs" />
+    <Compile Include="CombatEngine\Types\BaseShooter.cs" />
+    <Compile Include="CombatEngine\Types\BaseStriker.cs" />
+    <Compile Include="CombatEngine\Types\Casters\Longstaves\TestLongstaff.cs" />
+    <Compile Include="CombatEngine\Types\Deflectors\TestShield.cs" />
+    <Compile Include="CombatEngine\Types\Deflectors\VillagekeepersShield.cs" />
+    <Compile Include="CombatEngine\Types\Shooters\Arweblast.cs" />
+    <Compile Include="CombatEngine\Types\Shooters\Bow.cs" />
+    <Compile Include="CombatEngine\Types\Shooters\BowString.cs" />
+    <Compile Include="CombatEngine\Types\Shooters\Crossbow.cs" />
+    <Compile Include="CombatEngine\Types\Shooters\Crossbows\TestArweblast.cs" />
+    <Compile Include="CombatEngine\Types\Shooters\Crossbows\TestCrossbow.cs" />
+    <Compile Include="CombatEngine\Types\Shooters\Longbows\TestBow.cs" />
+    <Compile Include="CombatEngine\Types\Shooters\ThrownItem.cs" />
+    <Compile Include="CombatEngine\Types\Shooters\ThrownItems\Knife.cs" />
+    <Compile Include="CombatEngine\Types\Strikers\Daggers\Wyrmtooth.cs" />
+    <Compile Include="CombatEngine\Types\Strikers\Halberds\StonestrikeHalberd.cs" />
+    <Compile Include="CombatEngine\Types\Strikers\Longswords\TestSword.cs" />
+    <Compile Include="CombatEngine\Types\Strikers\Rapier\PalewoodRapier.cs" />
+    <Compile Include="CombatEngine\Types\Strikers\Spears\PrimitiveSpear.cs" />
+    <Compile Include="CombatEngine\Types\Strikers\Swords\TarnishedShortsword.cs" />
+    <Compile Include="Culture\Calendar.cs" />
+    <Compile Include="Culture\CultureManager.cs" />
+    <Compile Include="Data\DataManager.cs" />
+    <Compile Include="Debugging\Console.cs" />
+    <Compile Include="Debugging\DebugManager.cs" />
+    <Compile Include="Debugging\FPSCounter.cs" />
+    <Compile Include="Debugging\Info.cs" />
+    <Compile Include="Debugging\Logger.cs" />
+    <Compile Include="Entities\Actions\ActionPackage.cs" />
+    <Compile Include="Entities\Actions\Jumping.cs" />
+    <Compile Include="Entities\AI\Agents\BaseAgent.cs" />
+    <Compile Include="Entities\AI\Agents\Type\AdvancedAgentTest.cs" />
+    <Compile Include="Entities\AI\Agents\Type\VegetableAgent.cs" />
+    <Compile Include="Entities\AI\Desire\DesireManager.cs" />
+    <Compile Include="Entities\AI\Goal\BaseGoal.cs" />
+    <Compile Include="Entities\AI\Goal\CompositeGoal.cs" />
+    <Compile Include="Entities\AI\Goal\Type\DelayAI.cs" />
+    <Compile Include="Entities\AI\Goal\Type\EquipAmmo.cs" />
+    <Compile Include="Entities\AI\Goal\Type\ArcherBehavior.cs" />
+    <Compile Include="Entities\AI\Goal\Type\ActivateObject.cs" />
+    <Compile Include="Entities\AI\Goal\Type\ArriveAI.cs" />
+    <Compile Include="Entities\AI\Goal\Type\EquipWeapon.cs" />
+    <Compile Include="Entities\AI\Goal\Type\Flank.cs" />
+    <Compile Include="Entities\AI\Goal\Type\FleeAI.cs" />
+    <Compile Include="Entities\AI\Goal\Type\FollowEntity.cs" />
+    <Compile Include="Entities\AI\Goal\Type\FollowPath.cs" />
+    <Compile Include="Entities\AI\Goal\Type\GlanceAround.cs" />
+    <Compile Include="Entities\AI\Goal\Type\GoToPoint.cs" />
+    <Compile Include="Entities\AI\Goal\Type\GrabItem.cs" />
+    <Compile Include="Entities\AI\Goal\Type\GuardPoint.cs" />
+    <Compile Include="Entities\AI\Goal\Type\Idle.cs" />
+    <Compile Include="Entities\AI\Goal\Type\UseHealthPotion.cs" />
+    <Compile Include="Entities\AI\Goal\Type\UseItem.cs" />
+    <Compile Include="Entities\AI\Goal\Type\UseWeapon.cs" />
+    <Compile Include="Entities\AI\Goal\Type\WanderAI.cs" />
+    <Compile Include="Entities\Captions\BaseCaption.cs" />
+    <Compile Include="Entities\Classes\AnimationState.cs" />
+    <Compile Include="Entities\Classes\EntityCaption.cs" />
+    <Compile Include="Entities\Classes\EntityChatter.cs" />
+    <Compile Include="Entities\Classes\EntityDisposition.cs" />
+    <Compile Include="Entities\Classes\EntityEquipment.cs" />
+    <Compile Include="Entities\Classes\EntityInfo.cs" />
+    <Compile Include="Entities\Classes\EntityKin.cs" />
+    <Compile Include="Entities\Classes\EntityLoot.cs" />
+    <Compile Include="Entities\Classes\ObjectMemory.cs" />
+    <Compile Include="Entities\Classes\ObjectAttributes.cs" />
+    <Compile Include="Entities\Classes\EntityObject.cs" />
+    <Compile Include="Entities\Classes\ObjectSenses.cs" />
+    <Compile Include="Entities\Classes\ObjectStatistics.cs" />
+    <Compile Include="Entities\Classes\EntityStatus.cs" />
+    <Compile Include="Entities\Classes\EntityStorage.cs" />
+    <Compile Include="Entities\Classes\EntityVisual.cs" />
+    <Compile Include="Entities\Classes\Helper\ItemDrop.cs" />
+    <Compile Include="Entities\Classes\SoulRenown.cs" />
+    <Compile Include="Entities\EntityDatabase.cs" />
+    <Compile Include="Entities\EntityManager.cs" />
+    <Compile Include="Entities\Factions\BaseFaction.cs" />
+    <Compile Include="Entities\Factions\FactionDatabase.cs" />
+    <Compile Include="Entities\Skills\Agility.cs" />
+    <Compile Include="Entities\Skills\Archery.cs" />
+    <Compile Include="Entities\Skills\Awareness.cs" />
+    <Compile Include="Entities\Skills\BaseSkill.cs" />
+    <Compile Include="Entities\Skills\Concealment.cs" />
+    <Compile Include="Entities\Skills\Defense.cs" />
+    <Compile Include="Entities\Skills\Endurance.cs" />
+    <Compile Include="Entities\Skills\ExperienceMultiplier.cs" />
+    <Compile Include="Entities\Skills\Health.cs" />
+    <Compile Include="Entities\Skills\Intelligence.cs" />
+    <Compile Include="Entities\Skills\Magic.cs" />
+    <Compile Include="Entities\Skills\Looting.cs" />
+    <Compile Include="Entities\Skills\Skillset.cs" />
+    <Compile Include="Entities\Skills\Strength.cs" />
+    <Compile Include="Entities\Skills\Trapping.cs" />
+    <Compile Include="Entities\Status Effects\BaseStatus.cs" />
+    <Compile Include="Entities\StatusDatabase.cs" />
+    <Compile Include="Entities\Steering Behaviors\BaseSteering.cs" />
+    <Compile Include="Entities\Steering Behaviors\Pathfinding\Pathfinder.cs" />
+    <Compile Include="Entities\Steering Behaviors\Pathfinding\PathfindMap.cs" />
+    <Compile Include="Entities\Steering Behaviors\SteeringBehavior.cs" />
+    <Compile Include="Entities\Steering Behaviors\Types\Wander.cs" />
+    <Compile Include="Entities\Storage\StorageStarters.cs" />
+    <Compile Include="Entities\BaseEntity.cs" />
+    <Compile Include="Entities\Types\Basic\FlyingInsect.cs" />
+    <Compile Include="Entities\Types\Creatures\RabbitCreature.cs" />
+    <Compile Include="Entities\Types\MessageHolder.cs" />
+    <Compile Include="Entities\Types\Character\CharacterEntity.cs" />
+    <Compile Include="Entities\Types\Character\Dialogue\ConversationAction.cs" />
+    <Compile Include="Entities\Types\Character\Dialogue\ConversationManager.cs" />
+    <Compile Include="Entities\Types\Character\Dialogue\DialogueManager.cs" />
+    <Compile Include="Entities\Types\Character\Dialogue\DialogueTypes\AddItem.cs" />
+    <Compile Include="Entities\Types\Character\Dialogue\DialogueTypes\AddMemory.cs" />
+    <Compile Include="Entities\Types\Character\Dialogue\DialogueTypes\AddRumor.cs" />
+    <Compile Include="Entities\Types\Character\Dialogue\DialogueTypes\Bools\CheckItem.cs" />
+    <Compile Include="Entities\Types\Character\Dialogue\DialogueTypes\Bools\CheckRumor.cs" />
+    <Compile Include="Entities\Types\Character\Dialogue\DialogueTypes\Bools\CheckRumorDismissed.cs" />
+    <Compile Include="Entities\Types\Character\Dialogue\DialogueTypes\Bools\CheckRumorInactive.cs" />
+    <Compile Include="Entities\Types\Character\Dialogue\DialogueTypes\Bools\CheckRumorState.cs" />
+    <Compile Include="Entities\Types\Character\Dialogue\DialogueTypes\CharacterSay.cs" />
+    <Compile Include="Entities\Types\Character\Dialogue\DialogueTypes\CheckpointAction.cs" />
+    <Compile Include="Entities\Types\Character\Dialogue\DialogueTypes\DelayDialogue.cs" />
+    <Compile Include="Entities\Types\Character\Dialogue\DialogueTypes\DialogueOptions.cs" />
+    <Compile Include="Entities\Types\Character\Dialogue\DialogueTypes\DismissRumor.cs" />
+    <Compile Include="Entities\Types\Character\Dialogue\DialogueTypes\EndDialogue.cs" />
+    <Compile Include="Entities\Types\Character\Dialogue\DialogueTypes\ResolveRumor.cs" />
+    <Compile Include="Entities\Types\Character\Interface\CharacterUI.cs" />
+    <Compile Include="Entities\Types\Character\Interface\InteractionUI.cs" />
+    <Compile Include="Entities\Types\Character\Merchant.cs" />
+    <Compile Include="Entities\Types\NonPlayerEntity.cs" />
+    <Compile Include="Entities\Types\Player\PlayerClasses.cs" />
+    <Compile Include="Entities\Types\Player\PlayerEntity.cs" />
+    <Compile Include="Entities\Types\Player\TypingInterface.cs" />
+    <Compile Include="Entities\VisualDatabase.cs" />
+    <Compile Include="Entities\Visuals\BaseVisual.cs" />
+    <Compile Include="Extensions\BasicAnimation.cs" />
+    <Compile Include="Extensions\Circle.cs" />
+    <Compile Include="Extensions\ColorHelper.cs" />
+    <Compile Include="Extensions\Cryption.cs" />
+    <Compile Include="Extensions\FileHelper.cs" />
+    <Compile Include="Extensions\FlexiButton.cs" />
+    <Compile Include="Extensions\FloatHelper.cs" />
+    <Compile Include="Extensions\GPUOffload.cs" />
+    <Compile Include="Extensions\Line.cs" />
+    <Compile Include="Extensions\ListHelper.cs" />
+    <Compile Include="Extensions\MenuButton.cs" />
+    <Compile Include="Extensions\Noise.cs" />
+    <Compile Include="Extensions\Parsing.cs" />
+    <Compile Include="Extensions\Percent.cs" />
+    <Compile Include="Extensions\PercentageBar.cs" />
+    <Compile Include="Extensions\PieChart.cs" />
+    <Compile Include="Extensions\Point4.cs" />
+    <Compile Include="Extensions\PointHelper.cs" />
+    <Compile Include="Extensions\RandomHelper.cs" />
+    <Compile Include="Extensions\Screenshot.cs" />
+    <Compile Include="Extensions\SpriteBatchHelper.cs" />
+    <Compile Include="Extensions\Strings.cs" />
+    <Compile Include="Extensions\TextInput.cs" />
+    <Compile Include="Extensions\TextureHelper.cs" />
+    <Compile Include="Extensions\ToolTip.cs" />
+    <Compile Include="Extensions\VectorHelper.cs" />
+    <Compile Include="GameAssetsManager.cs" />
+    <Compile Include="GameManager.cs" />
+    <Compile Include="LightEngine\BaseLight.cs" />
+    <Compile Include="LightEngine\Global\GlobalVariables.cs" />
+    <Compile Include="LightEngine\Global\Interfaces\IUnload.cs" />
+    <Compile Include="LightEngine\Types\AnimatedLight.cs" />
+    <Compile Include="LightEngine\Types\FlickerLight.cs" />
+    <Compile Include="LightEngine\WorldLight.cs" />
+    <Compile Include="ParticleEngine\BaseEmitter.cs" />
+    <Compile Include="ParticleEngine\EmitterTypes\BloodDrip.cs" />
+    <Compile Include="ParticleEngine\EmitterTypes\BloodSpew.cs" />
+    <Compile Include="ParticleEngine\EmitterTypes\Elements\CandleSmoke.cs" />
+    <Compile Include="ParticleEngine\EmitterTypes\EmberPileSmoke.cs" />
+    <Compile Include="ParticleEngine\EmitterTypes\EmberPileSparks.cs" />
+    <Compile Include="ParticleEngine\EmitterTypes\FlameThrower.cs" />
+    <Compile Include="ParticleEngine\EmitterTypes\Flora-based\TreeLeaves.cs" />
+    <Compile Include="ParticleEngine\EmitterTypes\HiddenItem.cs" />
+    <Compile Include="ParticleEngine\EmitterTypes\JumpCircle.cs" />
+    <Compile Include="ParticleEngine\EmitterTypes\MetalSparks.cs" />
+    <Compile Include="ParticleEngine\EmitterTypes\MonumentActivationCircle.cs" />
+    <Compile Include="ParticleEngine\EmitterTypes\MonumentActivationEmbers.cs" />
+    <Compile Include="ParticleEngine\EmitterTypes\Screen-based\DeathEmbers.cs" />
+    <Compile Include="ParticleEngine\EmitterTypes\Screen-based\DepleteMeter.cs" />
+    <Compile Include="ParticleEngine\EmitterTypes\Screen-based\LogoEmbers.cs" />
+    <Compile Include="ParticleEngine\EmitterTypes\Screen-based\SmelterEmbers.cs" />
+    <Compile Include="ParticleEngine\EmitterTypes\Screen-based\SmelterSmoke.cs" />
+    <Compile Include="ParticleEngine\EmitterTypes\Screen-based\SoulgateCircle.cs" />
+    <Compile Include="ParticleEngine\EmitterTypes\SelectedObject.cs" />
+    <Compile Include="ParticleEngine\EmitterTypes\TakeImage.cs" />
+    <Compile Include="ParticleEngine\EmitterTypes\TakeImageTypes\DustImage.cs" />
+    <Compile Include="ParticleEngine\EmitterTypes\TakeImageTypes\EmberImage.cs" />
+    <Compile Include="ParticleEngine\EmitterTypes\Weather\Rain.cs" />
+    <Compile Include="ParticleEngine\EmitterTypes\Weather\Snow.cs" />
+    <Compile Include="ParticleEngine\Particle.cs" />
+    <Compile Include="ParticleEngine\Particles\ConnectedParticle.cs" />
+    <Compile Include="ParticleEngine\Particles\DualConnectedParticle.cs" />
+    <Compile Include="ParticleEngine\Particles\FloorConnectedParticle.cs" />
+    <Compile Include="ParticleEngine\Particles\FloorParticle.cs" />
+    <Compile Include="ParticleEngine\Particles\TrailParticle.cs" />
+    <Compile Include="ParticleEngine\ParticleValues.cs" />
+    <Compile Include="ParticleEngine\WeatherManager.cs" />
+    <Compile Include="Performance\CallLimiter.cs" />
+    <Compile Include="Performance\Suspension.cs" />
+    <Compile Include="ScreenEngine\Options\VersionUpgrader.cs" />
+    <Compile Include="Templates\GameObjectTemplate.cs" />
+    <Compile Include="TileEngine\Objects\Various\SetFloor.cs" />
+    <Compile Include="TileEngine\Objects\Various\LoadMap.cs" />
+    <Compile Include="VFX\MotionBlur.cs" />
+    <Compile Include="VFX\Swooshes\BaseSwoosh.cs" />
+    <Compile Include="VFX\Swooshes\Joint.cs" />
+    <Compile Include="VFX\Swooshes\Types\AirSwoosh.cs" />
+    <Compile Include="VFX\Swooshes\Types\ThinRibbon.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScreenEngine\BaseScreen.cs" />
+    <Compile Include="ScreenEngine\Container\ContainerUI.cs" />
+    <Compile Include="ScreenEngine\EntityHUD.cs" />
+    <Compile Include="ScreenEngine\EquipmentScreens\EquipmentUI.cs" />
+    <Compile Include="ScreenEngine\EquipmentScreens\EquippedSlots.cs" />
+    <Compile Include="ScreenEngine\InterfaceAudio.cs" />
+    <Compile Include="ScreenEngine\InterfaceEmitters.cs" />
+    <Compile Include="ScreenEngine\InventoryScreen\EquipSlot.cs" />
+    <Compile Include="ScreenEngine\InventoryScreen\InventoryTab.cs" />
+    <Compile Include="ScreenEngine\InventoryScreen\InventoryUI.cs" />
+    <Compile Include="ScreenEngine\InventoryScreen\ItemDatabase.cs" />
+    <Compile Include="ScreenEngine\InventoryScreen\ItemTypes\Ammo.cs" />
+    <Compile Include="ScreenEngine\InventoryScreen\ItemTypes\Armor.cs" />
+    <Compile Include="ScreenEngine\InventoryScreen\ItemTypes\BaseItem.cs" />
+    <Compile Include="ScreenEngine\InventoryScreen\ItemTypes\Consumable.cs" />
+    <Compile Include="ScreenEngine\InventoryScreen\ItemTypes\ConsumableTypes\Healing.cs" />
+    <Compile Include="ScreenEngine\InventoryScreen\ItemTypes\Helper\ArmorAttribute.cs" />
+    <Compile Include="ScreenEngine\InventoryScreen\ItemTypes\Helper\Requirements.cs" />
+    <Compile Include="ScreenEngine\InventoryScreen\ItemTypes\Jewellery.cs" />
+    <Compile Include="ScreenEngine\InventoryScreen\ItemTypes\Miscellaneous.cs" />
+    <Compile Include="ScreenEngine\InventoryScreen\ItemTypes\MiscellaneousTypes\Binocular.cs" />
+    <Compile Include="ScreenEngine\InventoryScreen\ItemTypes\MiscellaneousTypes\NumberDice.cs" />
+    <Compile Include="ScreenEngine\InventoryScreen\ItemTypes\MiscellaneousTypes\NumberHolder.cs" />
+    <Compile Include="ScreenEngine\InventoryScreen\ItemTypes\Resource.cs" />
+    <Compile Include="ScreenEngine\InventoryScreen\ItemTypes\Weapon.cs" />
+    <Compile Include="ScreenEngine\InventoryScreen\ItemTypes\WeaponsTypes\ThrownWeapon.cs" />
+    <Compile Include="ScreenEngine\Main\LoadGame.cs" />
+    <Compile Include="ScreenEngine\Main\MainScreen.cs" />
+    <Compile Include="ScreenEngine\Main\NewGame.cs" />
+    <Compile Include="ScreenEngine\Main\StartScreen.cs" />
+    <Compile Include="ScreenEngine\Merchanting\BarterUI.cs" />
+    <Compile Include="ScreenEngine\Merchanting\PurchaseUI.cs" />
+    <Compile Include="ScreenEngine\Notification\Notification.cs" />
+    <Compile Include="ScreenEngine\Notification\NotificationManager.cs" />
+    <Compile Include="ScreenEngine\OffscreenHUD.cs" />
+    <Compile Include="ScreenEngine\Options\Controls.cs" />
+    <Compile Include="ScreenEngine\Options\Cursor.cs" />
+    <Compile Include="ScreenEngine\Options\GameSettings.cs" />
+    <Compile Include="ScreenEngine\Options\GameInfo.cs" />
+    <Compile Include="ScreenEngine\Options\GlobalVariables.cs" />
+    <Compile Include="ScreenEngine\Options\OptionsInterface.cs" />
+    <Compile Include="ScreenEngine\Rumors\Rumor.cs" />
+    <Compile Include="ScreenEngine\Rumors\RumorDatabase.cs" />
+    <Compile Include="ScreenEngine\Rumors\RumorsInterface.cs" />
+    <Compile Include="ScreenEngine\ScreenManager.cs" />
+    <Compile Include="ScreenEngine\SelectionButton.cs" />
+    <Compile Include="ScreenEngine\Soulgate\BrewmastersContrivances.cs" />
+    <Compile Include="ScreenEngine\Soulgate\Crafting\OfferingsUI.cs" />
+    <Compile Include="ScreenEngine\Soulgate\Crafting\MendersTools.cs" />
+    <Compile Include="ScreenEngine\Soulgate\Crafting\OreSmelter.cs" />
+    <Compile Include="ScreenEngine\Soulgate\Crafting\ItemHolder.cs" />
+    <Compile Include="ScreenEngine\Soulgate\Crafting\ReinforceWorkbench.cs" />
+    <Compile Include="ScreenEngine\Soulgate\StatsScreen.cs" />
+    <Compile Include="ScreenEngine\Soulgate\FlameWarpUI.cs" />
+    <Compile Include="ScreenEngine\Soulgate\ImbueEssenceUI.cs" />
+    <Compile Include="ScreenEngine\Soulgate\SkillButton.cs" />
+    <Compile Include="ScreenEngine\Soulgate\SoulgateButton.cs" />
+    <Compile Include="ScreenEngine\Soulgate\SoulgateInterface.cs" />
+    <Compile Include="ScreenEngine\Soulgate\Stonehold.cs" />
+    <Compile Include="ScreenEngine\Souls\SoulsDatabase.cs" />
+    <Compile Include="ScreenEngine\Souls\SoulsInterface.cs" />
+    <Compile Include="ScreenEngine\Souls\Types\BaseSoul.cs" />
+    <Compile Include="ScreenEngine\Souls\Types\TestSoul.cs" />
+    <Compile Include="ScreenEngine\Spellbook\SpellbookInterface.cs" />
+    <Compile Include="ScreenEngine\Spellbook\SpellbookTab.cs" />
+    <Compile Include="ScreenEngine\Spellbook\SpellDatabase.cs" />
+    <Compile Include="ScreenEngine\Spellbook\Types\BaseSpell.cs" />
+    <Compile Include="ScreenEngine\Various\DamageDisplayer.cs" />
+    <Compile Include="ScreenEngine\Various\DamageSlash.cs" />
+    <Compile Include="ScreenEngine\Various\DeathScreen.cs" />
+    <Compile Include="ScreenEngine\Various\GameExit.cs" />
+    <Compile Include="ScreenEngine\Various\PauseScreen.cs" />
+    <Compile Include="ScreenEngine\Various\ScreenEffects.cs" />
+    <Compile Include="ScreenEngine\Various\SelectionBox.cs" />
+    <Compile Include="ScreenEngine\Various\ShortBox.cs" />
+    <Compile Include="ScreenEngine\Various\SplashScreen.cs" />
+    <Compile Include="ShaderType.cs" />
+    <Compile Include="TileEngine\DepthFloor.cs" />
+    <Compile Include="TileEngine\DisplayName.cs" />
+    <Compile Include="TileEngine\Objects\Flora\Flower\WaterFlora.cs" />
+    <Compile Include="TileEngine\Objects\Flora\Trees\BaseTree.cs" />
+    <Compile Include="TileEngine\Objects\Flora\Trees\PalewoodTree.cs" />
+    <Compile Include="TileEngine\Objects\GameObject.cs" />
+    <Compile Include="TileEngine\MapBackground.cs" />
+    <Compile Include="TileEngine\MapParser.cs" />
+    <Compile Include="TileEngine\Map\Editor\AutoSuggestionObject.cs" />
+    <Compile Include="TileEngine\Map\Editor\Editor.cs" />
+    <Compile Include="TileEngine\Map\Editor\Helper\ItemHolder.cs" />
+    <Compile Include="TileEngine\Map\Editor\Helper\TileHolder.cs" />
+    <Compile Include="TileEngine\Map\Editor\HelpScreen.cs" />
+    <Compile Include="TileEngine\Map\Editor\ObjectEditor.cs" />
+    <Compile Include="TileEngine\Map\Editor\TileEditor.cs" />
+    <Compile Include="TileEngine\Map\Layer.cs" />
+    <Compile Include="TileEngine\Map\Tile.cs" />
+    <Compile Include="TileEngine\Map\Tileset.cs" />
+    <Compile Include="TileEngine\Objects\Audio\Ambience2D.cs" />
+    <Compile Include="TileEngine\Objects\Audio\BackgroundSong.cs" />
+    <Compile Include="TileEngine\Objects\Audio\LayeredMusic.cs" />
+    <Compile Include="TileEngine\Objects\Colliders\BaseCollider.cs" />
+    <Compile Include="TileEngine\Objects\Colliders\Types\CircleBlock.cs" />
+    <Compile Include="TileEngine\Objects\Colliders\Types\CustomTile.cs" />
+    <Compile Include="TileEngine\Objects\Colliders\Types\LineBlock.cs" />
+    <Compile Include="TileEngine\Objects\ContainerTypes\BaseContainer.cs" />
+    <Compile Include="TileEngine\Objects\ContainerTypes\MultiItem.cs" />
+    <Compile Include="TileEngine\Objects\ContainerTypes\SingleItem.cs" />
+    <Compile Include="TileEngine\Objects\Flora\BaseFlora.cs" />
+    <Compile Include="TileEngine\Objects\Flora\Flower\WavyFlora.cs" />
+    <Compile Include="TileEngine\Objects\Logic\BaseLogic.cs" />
+    <Compile Include="TileEngine\Objects\Logic\Types\BoolAndGate.cs" />
+    <Compile Include="TileEngine\Objects\Logic\Types\BoolOrGate.cs" />
+    <Compile Include="TileEngine\Objects\ObjectAttributes\FireSpread.cs" />
+    <Compile Include="TileEngine\Objects\SkillTypes\BaseSkill.cs" />
+    <Compile Include="TileEngine\Objects\SkillTypes\LedgeGravity.cs" />
+    <Compile Include="TileEngine\Objects\SkillTypes\HiddenWall.cs" />
+    <Compile Include="TileEngine\Objects\Soulgates\BaseSoulgate.cs" />
+    <Compile Include="TileEngine\Objects\Soulgates\SoulgateDatabase.cs" />
+    <Compile Include="TileEngine\Objects\Soulgates\SoulgateManager.cs" />
+    <Compile Include="TileEngine\Objects\TriggerTypes\Sensors\OutputTypes\AttachToOutput.cs" />
+    <Compile Include="TileEngine\Objects\TriggerTypes\Sensors\OutputTypes\NumberOperator.cs" />
+    <Compile Include="TileEngine\Objects\TriggerTypes\Sensors\OutputTypes\ParseGroup.cs" />
+    <Compile Include="TileEngine\Objects\TriggerTypes\Sensors\OutputTypes\Repeater.cs" />
+    <Compile Include="TileEngine\Objects\TriggerTypes\Sensors\OutputTypes\VariableRouter.cs" />
+    <Compile Include="TileEngine\Objects\TriggerTypes\Sensors\SensorTypes\IDSensor.cs" />
+    <Compile Include="TileEngine\Objects\TriggerTypes\Sensors\SensorTypes\KeySensor.cs" />
+    <Compile Include="TileEngine\Objects\TriggerTypes\Sensors\SensorTypes\MouseClickSensor.cs" />
+    <Compile Include="TileEngine\Objects\TriggerTypes\Sensors\SensorTypes\MouseSensor.cs" />
+    <Compile Include="TileEngine\Objects\TriggerTypes\Sensors\SensorTypes\NumberDetector.cs" />
+    <Compile Include="TileEngine\Objects\TriggerTypes\Sensors\SensorTypes\VariableDetector.cs" />
+    <Compile Include="TileEngine\Objects\TriggerTypes\SwitchTypes\BaseSwitch.cs" />
+    <Compile Include="TileEngine\Objects\TriggerTypes\SwitchTypes\Types\Activation.cs" />
+    <Compile Include="TileEngine\Objects\TriggerTypes\SwitchTypes\Types\ProximityRange.cs" />
+    <Compile Include="TileEngine\Objects\TriggerTypes\SwitchTypes\Types\LockButton.cs" />
+    <Compile Include="TileEngine\Objects\TriggerTypes\SwitchTypes\Types\LockSwitch.cs" />
+    <Compile Include="TileEngine\Objects\TriggerTypes\SwitchTypes\Types\SpringButton.cs" />
+    <Compile Include="TileEngine\Objects\TriggerTypes\SwitchTypes\Types\TimeButton.cs" />
+    <Compile Include="TileEngine\Objects\TriggerTypes\SwitchTypes\Types\TimeSwitch.cs" />
+    <Compile Include="TileEngine\Objects\TriggerTypes\SwitchTypes\Types\TwoWaySwitch.cs" />
+    <Compile Include="TileEngine\Objects\TrapTypes\BaseTrap.cs" />
+    <Compile Include="TileEngine\Objects\TriggerTypes\Sensors\BaseSensor.cs" />
+    <Compile Include="TileEngine\Objects\TriggerTypes\Sensors\SensorTypes\ActivationSensor.cs" />
+    <Compile Include="TileEngine\Objects\TriggerTypes\Sensors\SensorTypes\AghteneSensor.cs" />
+    <Compile Include="TileEngine\Objects\TriggerTypes\Sensors\SensorTypes\CaptionSensor.cs" />
+    <Compile Include="TileEngine\Objects\TriggerTypes\Sensors\SensorTypes\DaySensor.cs" />
+    <Compile Include="TileEngine\Objects\TriggerTypes\Sensors\SensorTypes\DelaySensor.cs" />
+    <Compile Include="TileEngine\Objects\TriggerTypes\Sensors\SensorTypes\EquippedItemSensor.cs" />
+    <Compile Include="TileEngine\Objects\TriggerTypes\Sensors\SensorTypes\EquippedSoulSensor.cs" />
+    <Compile Include="TileEngine\Objects\TriggerTypes\Sensors\SensorTypes\HolidaySensor.cs" />
+    <Compile Include="TileEngine\Objects\TriggerTypes\Sensors\SensorTypes\HourSensor.cs" />
+    <Compile Include="TileEngine\Objects\TriggerTypes\Sensors\SensorTypes\ItemSensor.cs" />
+    <Compile Include="TileEngine\Objects\TriggerTypes\Sensors\SensorTypes\QuickslotSensor.cs" />
+    <Compile Include="TileEngine\Objects\TriggerTypes\Sensors\SensorTypes\SkillLevelSensor.cs" />
+    <Compile Include="TileEngine\Objects\TriggerTypes\Sensors\SensorTypes\SoulSensor.cs" />
+    <Compile Include="TileEngine\Objects\Various\AnimatedObject.cs" />
+    <Compile Include="TileEngine\Objects\Various\Array.cs" />
+    <Compile Include="TileEngine\Objects\Various\DecorObject.cs" />
+    <Compile Include="TileEngine\Objects\Various\EmberPile.cs" />
+    <Compile Include="TileEngine\Objects\Various\FadingImage.cs" />
+    <Compile Include="TileEngine\Objects\TriggerTypes\Sensors\OutputTypes\ParseEdit.cs" />
+    <Compile Include="TileEngine\Objects\Various\LookAt.cs" />
+    <Compile Include="TileEngine\Objects\TriggerTypes\Sensors\OutputTypes\RandomObject.cs" />
+    <Compile Include="TileEngine\Objects\Various\Movement\CircleLerp.cs" />
+    <Compile Include="TileEngine\Objects\Various\Movement\SmoothLerp.cs" />
+    <Compile Include="TileEngine\TileMap.cs" />
+    <Compile Include="TileEngine\Objects\TriggerObject.cs" />
+    <Compile Include="WorldManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="MonoGame.Framework, Version=3.5.1.1679, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\MonoGame\v3.0\Assemblies\Windows\MonoGame.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <MonoGameContentReference Include="Content\Content.mgcb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CombatEngine\Projectiles\Types\Magical\" />
+    <Folder Include="CombatEngine\Types\Casters\Books\" />
+    <Folder Include="CombatEngine\Types\Casters\Shortstaves\" />
+    <Folder Include="ScreenEngine\InventoryScreen\ItemTypes\AmmoTypes\" />
+    <Folder Include="ScreenEngine\InventoryScreen\ItemTypes\ArmorTypes\" />
+    <Folder Include="ScreenEngine\InventoryScreen\ItemTypes\JewelleryTypes\" />
+    <Folder Include="ScreenEngine\InventoryScreen\ItemTypes\ResourcesTypes\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>CD $(SolutionDir)MapContent\
+CALL buildMap.bat
+
+Echo Main content has been successfully compiled and copied to output directory.
+
+CD $(SolutionDir)MainContent\
+CALL buildMain.bat
+
+Echo Map content has been successfully compiled and copied to output directory.
+
+CD $(SolutionDir)Pilgrimage Of Embers/
+CALL AutoBackup.exe</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent></PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
